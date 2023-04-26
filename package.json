@@ -1,0 +1,14 @@
+{
+  "name": "e_cp_discordowadiobot",
+  "version": "1.0.0",
+  "description": "Tracks time left to ORD",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.9.0"
+  }
+}
