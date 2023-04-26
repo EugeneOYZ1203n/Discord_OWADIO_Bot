@@ -1,7 +1,7 @@
 console.log("Hi");
 
+require('dotenv').config();
 const { Client, IntentsBitField } = require('discord.js');
-const TOKEN = 'MTEwMDY2MzUzNDU2MTUzMzk2Mg.GkQlA7.Jhx4CY6dOWAh2y0DKl7H8yH8ciIdV4ibvKFhIs';
 
 const client = new Client({
     intents: [
@@ -12,5 +12,27 @@ const client = new Client({
     ],
 });
 
-client.login(TOKEN);
+client.login(process.env.TOKEN);
+
+client.on('ready', (c) => {
+    console.log(`${c.user.tag} is online.`);
+})
+
+
+
+
+client.on('messageCreate', (message) => {
+
+    if (message.author.bot){
+        return;
+    }
+
+    if (message.content === 'hello'){
+        message.reply('hello');
+    }
+
+    console.log(message.content);
+})
+
+
 
