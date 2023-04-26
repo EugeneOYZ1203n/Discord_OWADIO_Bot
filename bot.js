@@ -18,8 +18,17 @@ client.on('ready', (c) => {
     console.log(`${c.user.tag} is online.`);
 })
 
+client.on('interactionCreate', (interaction)=>{
+    if (!interaction.isChatInputCommand()){
+        return;
+    }
 
+    console.log('hey');
 
+    if (interaction.commandName === 'hey'){
+        interaction.reply('hey');
+    }
+})
 
 client.on('messageCreate', (message) => {
 
